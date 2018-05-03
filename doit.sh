@@ -22,12 +22,12 @@ QEMU=/usr/bin/qemu-arm-static
 DIST=stretch
 DEST=./$ARCH-$DIST
 
-PACKAGES="$KPKG initramfs-tools sudo"
+PACKAGES="$KPKG initramfs-tools sudo "
 #PACKAGES="firmware-misc-nonfree"
 #PACKAGES+="build-essential"
 
 # Docker (c.f. https://docs.docker.com/install/linux/docker-ce/debian/)
-PACKAGES+="apt-transport-https ca-certificates curl gnupg2 software-properties-common"
+PACKAGES+=" apt-transport-https ca-certificates curl gnupg2 software-properties-common"
 
 #
 # First stage
@@ -68,7 +68,7 @@ done
 # Create a minimal ramdisk (dummy kernel version "min", so no modules or firmware)
 KVER=min
 sudo chroot $DEST update-initramfs -c -k $KVER
-sudo chroot $DEST ln -s /boot/initrd.img-$KVER /boot/rootfs.cpio.gz
+sudo chroot $DEST ln -rs /boot/initrd.img-$KVER /boot/rootfs.cpio.gz)
 
 #
 # /etc/securetty
