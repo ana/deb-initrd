@@ -58,7 +58,7 @@ sudo chroot $DEST passwd root -d
 
 sudo sh -c "echo deb $MIRROR $DIST main non-free > $DEST/etc/apt/sources.list"
 sudo chroot $DEST apt -q update
-sudo chroot $DEST apt -y -q install $PACKAGES
+sudo chroot $DEST apt -y -q install --no-install-recommends $PACKAGES
 
 # custom patches
 for patch in $PWD/patches/*; do
