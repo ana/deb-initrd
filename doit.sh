@@ -5,7 +5,7 @@
 # - debian-archive-keyring
 # - qemu-user-static
 
-MIRROR=http://mirrors.accretive-networks.net/debian/
+MIRROR=http://deb.debian.org/debian/
 KPKG=
 
 #ARCH=arm64
