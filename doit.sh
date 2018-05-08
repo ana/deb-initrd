@@ -68,7 +68,7 @@ done
 # Create a minimal ramdisk (dummy kernel version "min", so no modules or firmware)
 KVER=min
 sudo chroot $DEST update-initramfs -c -k $KVER
-sudo chroot $DEST ln -rs /boot/initrd.img-$KVER /boot/rootfs.cpio.gz)
+sudo chroot $DEST ln -rs /boot/initrd.img-$KVER /boot/rootfs.cpio.gz
 
 #
 # /etc/securetty
